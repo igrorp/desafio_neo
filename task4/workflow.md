@@ -74,7 +74,7 @@ Para rodá-lo, usei:
 
 ![End read quality improvement](https://github.com/igrorp/desafio_neo/blob/main/task4/multiqc_cleaning/Screenshot%202021-03-22%20153746.png)
 
-De maneira geral as bibliotecas agora estão numa qualidade melhor e poucos reads (em torno de 5% nas bibliotecas) de fato foram removidos por não se adequarem os critérios, como consta nos relatórios fornecidos pelo FASTQC, o que indica que aparentemente esse sequenciamento foi bem sucedido. 
+De maneira geral as bibliotecas agora estão numa qualidade melhor e poucos reads (em torno de 5% nas bibliotecas) de fato foram removidos por não se adequarem os critérios, como consta nos relatórios fornecidos pelo FASTQC, o que indica que aparentemente esse sequenciamento foi bem sucedido. Podemos comparar as bibliotecas antes e depois do controle de qualidade na figura abaixo, onde as bibliotecas originai estão em vermelho e as filtradas estão em azul.
 
 ![enter image description here](https://github.com/igrorp/desafio_neo/blob/main/task4/multiqc_cleaning/fastqc_per_base_sequence_quality_plot%20%281%29.png)
 
@@ -85,5 +85,5 @@ Outra coisa que eu teria realizado na limpeza seria a remoção dos primeiros oi
 Com esse filtros de qualidade, agora as biblioteca podem ser utilizadas com mais confiança e reprodutibilidade, garantindo um desempenho melhor e agregando valor ao trabalho da empresa.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTczMzI4Nzk3NV19
+eyJoaXN0b3J5IjpbLTExNDc2NDcyODFdfQ==
 -->

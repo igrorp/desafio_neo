@@ -1,0 +1,70 @@
+
+SUMMARISING RUN PARAMETERS
+==========================
+Input filename: arquivos-de-apoio/fqs/F3D145_S211_L001_R1_001.fastq
+Trimming mode: single-end
+Trim Galore version: 0.6.6
+Cutadapt version: 1.18
+Python version: could not detect
+Number of cores used for trimming: 8
+Quality Phred score cutoff: 30
+Quality encoding type selected: ASCII+33
+Unable to auto-detect most prominent adapter from the first specified file (count Illumina: 0, count Nextera: 0, count smallRNA: 0)
+Defaulting to Illumina universal adapter ( AGATCGGAAGAGC ). Specify -a SEQUENCE to avoid this behavior).
+Adapter sequence: 'AGATCGGAAGAGC' (Illumina TruSeq, Sanger iPCR; default (inconclusive auto-detection))
+Maximum trimming error rate: 0.1 (default)
+Minimum required adapter overlap (stringency): 1 bp
+Minimum required sequence length before a sequence gets removed: 50 bp
+Removing Ns from the start and end of reads
+Running FastQC on the data once trimming has completed
+Output file will be GZIP compressed
+
+
+This is cutadapt 1.18 with Python 3.6.13
+Command line parameters: -j 8 -e 0.1 -q 30 -O 1 --trim-n -a AGATCGGAAGAGC arquivos-de-apoio/fqs/F3D145_S211_L001_R1_001.fastq
+Processing reads on 8 cores in single-end mode ...
+Finished in 0.39 s (53 us/read; 1.13 M reads/minute).
+
+=== Summary ===
+
+Total reads processed:                   7,377
+Reads with adapters:                     5,610 (76.0%)
+Reads written (passing filters):         7,377 (100.0%)
+
+Total basepairs processed:     1,851,563 bp
+Quality-trimmed:                  97,585 bp (5.3%)
+Total written (filtered):      1,743,223 bp (94.1%)
+
+=== Adapter 1 ===
+
+Sequence: AGATCGGAAGAGC; Type: regular 3'; Length: 13; Trimmed: 5610 times.
+
+No. of allowed errors:
+0-9 bp: 0; 10-13 bp: 1
+
+Bases preceding removed adapters:
+  A: 5.0%
+  C: 92.3%
+  G: 1.4%
+  T: 1.3%
+  none/other: 0.0%
+WARNING:
+    The adapter is preceded by "C" extremely often.
+    The provided adapter sequence could be incomplete at its 3' end.
+
+Overview of removed sequences
+length	count	expect	max.err	error counts
+1	477	1844.2	0	477
+2	5128	461.1	0	5128
+3	5	115.3	0	5
+
+WARNING:
+    One or more of your adapter sequences may be incomplete.
+    Please see the detailed output above.
+
+RUN STATISTICS FOR INPUT FILE: arquivos-de-apoio/fqs/F3D145_S211_L001_R1_001.fastq
+=============================================
+7377 sequences processed in total
+Sequences removed because they became shorter than the length cutoff of 50 bp:	28 (0.4%)
+Sequences removed because they contained more Ns than the cutoff of 10:	3 (0.0%)
+

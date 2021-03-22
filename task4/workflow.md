@@ -4,10 +4,10 @@ Utilizei os arquivos FQ fornecidos para demonstrar o fluxo de trabalho que geral
 
 Explicando as pastas criadas nessa tarefa:
 
- 1. raw/ 
- 2. multiqc_raw/
- 3. cleaning/
- 4. multiqc_cleaning/
+ 1. **raw/** contém os arquivos gerados pelo FASTQ com os dados originais fornecidos
+ 2. **multiqc_raw/** contém os arquivos gerados pelo MultiQC com os dados originais fornecidos
+ 3. **cleaning/** contém os arquivos gerados pelo FASTQ com os dados após o controle de qualidade e remoção dos adaptadores
+ 4. **multiqc_cleaning/** contém os arquivos gerados pelo MultiQC comparando as informações
 
 ## Cálculo de métricas de qualidade
 
@@ -35,10 +35,17 @@ O arquivo pode ser acessado em "task4/multiqc_raw/multiqc_report.html".
 
 Em suma, as bibliotecas apresentam uma boa qualidade em termos de **PHRED score médio** (em torno de 35), com o gráfico do score ao longo da posição do read indicando qualidades superiores a 30, exceto nos últimos nucleotídeos, ou seja, temos grande confiança (maior que 99,9%) na atribuição das sequências desses erros.
 
+![enter image description here](https://github.com/igrorp/desafio_neo/blob/main/task4/multiqc_raw/fastqc_per_base_sequence_quality_plot.png)
+
 Os **níveis de duplicação** são altos, mas acho que isso não apresenta um problema porque provavelmente são consequência dos primers utilizados e da condução do PCR
-anterior ao sequenciamento. Desde não seja uma contaminação (o que o FASTQC não está indicando) e a cobertura seja suficiente para representar o gene/genoma/transcritos desejados, a remoção dessas duplicações é tranquila e realizada durante os passos de alinhamento ou montagem.
+anterior ao sequenciamento. Desde não seja uma contaminação (o que o FASTQC não está indicando) e a cobertura seja suficiente para representar o gene/genoma/transcritos desejados, a remoção dessas duplicações é tranquila e realizada durante os passos de alinhamento ou montagem. 
+
+A distribuição das **porcentagens de nucleotídeos** nas sequências dos reads foi bem irregular (na verdade nunca vi uma distribuição tão estranha), mas acredito que isso se deve a presença de adaptadores ou deve ser um artefato vindo do corte que foi feito nos FASTQ para diminuir seu tamanho.
+![enter image description here](https://github.com/igrorp/desafio_neo/blob/main/task4/multiqc_raw/chart.png)
 
 A **distribuição GC** dos reads também destoa da esperada distribuição normal, apesar de que se a amostra sequenciada for de uma comunidade de microorganismos, é esperado que se tenha uma diversidade bem grande de conteúdos GC, já que essa característica é bem espécie-específica. Também já encontrei padrões bem estranhos de conteúdos GC em amostras que analisei em outros projetos, mesmo sendo da mesma espécie e não apresenta sinais de contaminação.
+
+![enter image description here](https://github.com/igrorp/desafio_neo/blob/main/task4/multiqc_raw/fastqc_per_sequence_gc_content_plot.png)
 
 A **distribuição de tamanho** dos reads gira em torno de 248-252 e aparentemente não foram identificados adaptadores.
 
@@ -64,16 +71,19 @@ Para rodá-lo, usei:
 ## Análise interpretativa da limpeza
 
  Novamente rodei o MultiQC nos arquivos de saída do FASTQC das bibliotecas agora limpas e podemos notar que ouve uma leve melhora nos parâmetros gerais, com uma diminuição significativa dos desvio dos valores de PHRED em algumas posiçõe mais finais do read, o que é bem comum.
-<imagem>
+
+![End read quality improvement](https://github.com/igrorp/desafio_neo/blob/main/task4/multiqc_cleaning/Screenshot%202021-03-22%20153746.png)
 
 De maneira geral as bibliotecas agora estão numa qualidade melhor e poucos reads (em torno de 5% nas bibliotecas) de fato foram removidos por não se adequarem os critérios, como consta nos relatórios fornecidos pelo FASTQC, o que indica que aparentemente esse sequenciamento foi bem sucedido. 
 
+![enter image description here](https://github.com/igrorp/desafio_neo/blob/main/task4/multiqc_cleaning/fastqc_per_base_sequence_quality_plot%20%281%29.png)
+
 Outra coisa que eu teria realizado na limpeza seria a remoção dos primeiros oito nucleotídeos dos reads, que, como demonstrado na imagem abaixo, são sequências quase que consenso e poderiam atrapalhar futuras análises. Como não tenho certeza da procedência das bilbiotecas e isso talvez seja algum artefato ou mesmo uma sequência adaptadora, decidi omitir essa parte da análise e provavelmente buscaria consulta com colegas em um situação real de trabalho.
 
-
+![enter image description here](https://github.com/igrorp/desafio_neo/blob/main/task4/multiqc_cleaning/Screenshot%202021-03-22%20144550.png)
 
 Com esse filtros de qualidade, agora as biblioteca podem ser utilizadas com mais confiança e reprodutibilidade, garantindo um desempenho melhor e agregando valor ao trabalho da empresa.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzI2OTg1MzQ4XX0=
+eyJoaXN0b3J5IjpbMTczMzI4Nzk3NV19
 -->

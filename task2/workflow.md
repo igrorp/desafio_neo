@@ -17,12 +17,12 @@ O script foi programada de modo que pudesse aceitar qualquer categoria de taxono
 ![enter image description here](https://github.com/igrorp/desafio_neo/blob/main/task2/Species_hist.png)
 
 Podemos analisar também os gêneros mais frequentes no nosso banco de dados.
-<img src="https://github.com/igrorp/desafio_neo/blob/main/task2/Genus_hist.png", height=50% />
+<img src="https://github.com/igrorp/desafio_neo/blob/main/task2/Genus_hist.png", height="50%" />
 ![enter image description here](https://github.com/igrorp/desafio_neo/blob/main/task2/Genus_hist.png)
 
 Ou também analisar as famílias de bactérias mais abundantes no dataset. Por algum motivo tem dados que parecem estar errados e associados com 'mitochondria' como família, certamente o banco teria quer ser revisado.
 
 ![enter image description here](https://github.com/igrorp/desafio_neo/blob/main/task2/Family_hist.png)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3OTM5NDk2NjhdfQ==
+eyJoaXN0b3J5IjpbLTQ1OTgyOTU0MF19
 -->

@@ -26,4 +26,4 @@ Abraços,
 
 ### [Workflow - Tarefa 3](https://github.com/igrorp/desafio_neo/blob/main/task3/workflow.md)
 
-### [Workflow - Tarefa 4](https://github.com/igrorp/desafio_neo/blob/main/task1/workflow.md)
+### [Workflow - Tarefa 4](https://github.com/igrorp/desafio_neo/blob/main/task4/workflow.md)
